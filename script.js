@@ -1,5 +1,5 @@
 // Password Protection
-const INVESTOR_PASSWORD = 'multikor2026'; // Change this to your preferred password
+const INVESTOR_PASSWORD = '#MRiFNZk4Z'; // Change this to your preferred password
 
 function checkPassword() {
     const input = document.getElementById('passwordInput');
@@ -457,3 +457,4 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
+
