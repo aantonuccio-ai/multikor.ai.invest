@@ -231,6 +231,38 @@ body {
     color: var(--text-primary);
 }
 
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 /* Container */
 .container {
     max-width: 1400px;
@@ -1044,6 +1076,51 @@ tbody tr:hover {
     .section-title {
         font-size: 36px;
     }
+
+    .nav-logo-img {
+        width: 160px;
+    }
+}
+
+@media (max-width: 968px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 280px;
+        height: calc(100vh - 80px);
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        gap: 0;
+        padding: 30px 0;
+        border-left: 1px solid var(--surface-light);
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        padding: 20px 30px;
+        border-bottom: 1px solid var(--surface-light);
+        transition: all 0.3s;
+    }
+
+    .nav-links a:hover {
+        background: var(--surface-light);
+        padding-left: 40px;
+    }
+
+    .nav-logo-img {
+        width: 140px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1055,9 +1132,12 @@ tbody tr:hover {
         padding: 0 20px;
     }
 
-    .nav-links {
-        flex-direction: column;
-        gap: 15px;
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .nav-logo-img {
+        width: 120px;
     }
 
     .hero {
@@ -1065,39 +1145,177 @@ tbody tr:hover {
     }
 
     .hero-title {
-        font-size: 36px;
+        font-size: 32px;
+        line-height: 1.3;
     }
 
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 16px;
+        margin-bottom: 40px;
     }
 
     .hero-stats {
-        gap: 40px;
+        gap: 30px;
+        flex-direction: column;
     }
 
     .stat-number {
-        font-size: 40px;
+        font-size: 36px;
+    }
+
+    .stat-label {
+        font-size: 14px;
     }
 
     .section {
-        padding: 60px 0;
+        padding: 50px 0;
     }
 
     .section-title {
         font-size: 28px;
+        line-height: 1.3;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .value-card {
+        padding: 30px;
+    }
+
+    .value-card h3 {
+        font-size: 20px;
+    }
+
+    .value-card p {
+        font-size: 15px;
     }
 
     .segments-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .segment-card {
+        padding: 30px;
+    }
+
+    .segment-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .segment-header h3 {
+        font-size: 20px;
+    }
+
+    .segment-badge {
+        align-self: flex-start;
+    }
+
+    .stat-value {
+        font-size: 22px;
+    }
+
+    .calculator-container {
+        padding: 25px;
+    }
+
+    .calculator-tabs {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .tab-btn {
+        padding: 15px 20px;
+        text-align: left;
+        border-bottom: 1px solid var(--surface-light);
+        border-left: 3px solid transparent;
+    }
+
+    .tab-btn.active {
+        border-bottom-color: var(--surface-light);
+        border-left-color: var(--accent);
     }
 
     .charts-grid {
         grid-template-columns: 1fr;
     }
 
+    .chart-container {
+        padding: 20px;
+    }
+
+    .financial-table,
+    .economics-table {
+        padding: 25px;
+        overflow-x: auto;
+    }
+
+    .financial-table h3,
+    .economics-table h3 {
+        font-size: 22px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 12px 10px;
+    }
+
+    .metric-card {
+        padding: 30px;
+    }
+
+    .metric-value {
+        font-size: 36px;
+    }
+
+    .metric-label {
+        font-size: 16px;
+    }
+
     .investment-grid {
         grid-template-columns: 1fr;
+    }
+
+    .investment-card {
+        padding: 30px;
+    }
+
+    .investment-card h3 {
+        font-size: 22px;
+    }
+
+    .investment-amount {
+        font-size: 36px;
+    }
+
+    .year1-budget {
+        padding: 25px;
+    }
+
+    .year1-budget h3 {
+        font-size: 22px;
+    }
+
+    .budget-item {
+        padding: 15px;
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    .budget-category {
+        font-size: 14px;
+    }
+
+    .budget-amount {
+        font-size: 18px;
     }
 
     .timeline::before {
@@ -1107,10 +1325,86 @@ tbody tr:hover {
     .timeline-item,
     .timeline-item:nth-child(even) {
         flex-direction: column;
+        padding-left: 60px;
     }
 
     .timeline-year {
         text-align: left;
+        font-size: 20px;
+    }
+
+    .timeline-metric {
+        font-size: 26px;
+    }
+
+    .timeline-content {
+        padding: 20px;
+    }
+
+    .password-container {
+        padding: 20px;
+    }
+
+    .logo-img {
+        width: 180px;
+    }
+
+    .password-form {
+        padding: 30px 20px;
+    }
+
+    .password-form h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .stat-number {
+        font-size: 32px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .nav-logo-img {
+        width: 100px;
+    }
+
+    .value-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .segments-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .segment-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .calc-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .competitive-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
     }
 }
 

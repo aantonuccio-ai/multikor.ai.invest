@@ -37,7 +37,39 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Initialize charts
     initCharts();
+
+    // Mobile menu toggle
+    initMobileMenu();
 });
+
+// Mobile Menu Functionality
+function initMobileMenu() {
+    const menuToggle = document.getElementById('mobileMenuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    }
+}
 
 // Tab Switching
 function switchTab(tabName) {
