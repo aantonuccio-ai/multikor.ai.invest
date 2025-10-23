@@ -234,22 +234,15 @@ function initCharts() {
             labels: ['Year 1 (2026)', 'Year 2 (2027)', 'Year 3 (2028)'],
             datasets: [
                 {
-                    label: 'Customer Support',
-                    data: [3.55, 8.26, 15.7],
+                    label: 'BPO Provider Channel',
+                    data: [18.95, 65, 155],
                     backgroundColor: 'rgba(102, 126, 234, 0.8)',
                     borderColor: 'rgba(102, 126, 234, 1)',
                     borderWidth: 2
                 },
                 {
-                    label: 'Finance Operations',
-                    data: [0.75, 2.18, 4.29],
-                    backgroundColor: 'rgba(124, 58, 237, 0.8)',
-                    borderColor: 'rgba(124, 58, 237, 1)',
-                    borderWidth: 2
-                },
-                {
-                    label: 'Procurement',
-                    data: [4.0, 32.0, 64.0],
+                    label: 'Enterprise Direct',
+                    data: [6.12, 18, 35],
                     backgroundColor: 'rgba(16, 185, 129, 0.8)',
                     borderColor: 'rgba(16, 185, 129, 1)',
                     borderWidth: 2
@@ -326,7 +319,7 @@ function initCharts() {
             datasets: [
                 {
                     label: 'Total Customers',
-                    data: [10, 25, 34],
+                    data: [8, 20, 35],
                     borderColor: 'rgba(102, 126, 234, 1)',
                     backgroundColor: 'rgba(102, 126, 234, 0.1)',
                     borderWidth: 3,
@@ -339,8 +332,8 @@ function initCharts() {
                     pointBorderWidth: 2
                 },
                 {
-                    label: 'Average ACV',
-                    data: [0.83, 1.7, 2.5],
+                    label: 'Average ACV ($M)',
+                    data: [3.13, 4.15, 5.43],
                     borderColor: 'rgba(16, 185, 129, 1)',
                     backgroundColor: 'rgba(16, 185, 129, 0.1)',
                     borderWidth: 3,
