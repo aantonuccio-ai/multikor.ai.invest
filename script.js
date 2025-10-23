@@ -30,10 +30,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initialize calculators
-    calculateSupport();
-    calculateFinance();
-    calculateProcurement();
+    // Initialize calculators (only if elements exist)
+    if (document.getElementById('support-results')) {
+        calculateSupport();
+        calculateFinance();
+        calculateProcurement();
+    }
 
     // Initialize charts
     initCharts();
