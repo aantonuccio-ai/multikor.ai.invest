@@ -7,7 +7,7 @@ An interactive, private web presentation for Seed and Series A investor presenta
 ### Password Protection
 - Secure access with password authentication
 - Session-based access (stays logged in during browser session)
-- Default password: `multikor2026` (change in `script.js`)
+- Default password: `XXXXXXXXXX` (change in `script.js`)
 
 ### Interactive Content
 
@@ -198,3 +198,4 @@ For questions or technical issues:
 **Version**: 1.0
 **Last Updated**: October 22, 2025
 **Created with**: Claude Code (Anthropic)
+
